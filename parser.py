@@ -73,4 +73,4 @@ def parse(bib_file,html_file,**meta):
 	out_file=open(html_file,"w")
 	print(content,file=out_file)
 if __name__=='__main__':
-	parse('cws.bib','cws.html',collector="张开旭",collector_url="#",title="中文分词文献列表 Bibliography of Chinese Word Segmentation")
+	parse('cws.bib','cws.html',collector="张开旭",collector_url="http://weibo.com/zhangkaixu",title="中文分词文献列表 Bibliography of Chinese Word Segmentation")
