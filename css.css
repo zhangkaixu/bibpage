@@ -1,0 +1,93 @@
+.year {
+	padding-left: 50px;
+	clear: both;
+	padding-right: 50px;
+	padding-top: 20px;
+}
+.keywords {
+	
+	margin-left: 20px;
+	clear: both;
+}
+.keyword {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
+	float: left;
+	
+	background:#CCCCCC;
+	margin-right: 10px;
+	padding-left:5px;
+	padding-right:5px;
+}
+.JF {
+	font-style: italic;
+	margin-left: 20px;
+}
+.authors {
+	margin-left: 20px;
+}
+.author {
+	border-radius: 3px;
+	float: left;
+	
+	#background:#CCCCCC;
+	margin-right: 10px;
+	padding-left:5px;
+	padding-right:5px;
+}
+.paper {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 20px;
+	font-size: 12px;
+}
+.note {
+	clear: both;
+	margin-left: 40px;
+	border-left-style: double;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+}
+.title {
+	font-weight: bold;
+	border-bottom-style: ridge;
+	font-size: 14px;
+}
+.header {
+	margin-left: 50px;
+	clear: both;
+	height: 80px;
+	vertical-align: bottom;
+}
+.bib{
+	clear: both;
+}
+.pic {
+	#background-image: url(logo.jpg);
+	background-repeat: no-repeat;
+	clear: none;
+	float: left;
+	height: 80px;
+	width: 80px;
+}
+.year_number {
+}
+.year_number {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
+	background-color: #CCCCCC;
+	border-top-style: solid;
+	border-left-style: solid;
+	font-size: 16px;
+	font-weight: bold;
+}
+p {
+}
