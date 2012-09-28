@@ -62,6 +62,7 @@ def parse(bib_file,html_file,**meta):
 {title}<br/>
 由<a href="{collector_url}">{collector}</a>维护<br/>
 如有意见与建议，欢迎联系作者:)<br/>
+【其它链接】：[中文分词实验环境](http://zhangkaixu.github.com/isan/)
 页面生成日期： {date}， 由<a href="http://zhangkaixu.github.com/bibpage/">bibpage</a>工具自动生成自bib格式文献列表。
 </div>
 
