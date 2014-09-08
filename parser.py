@@ -7,7 +7,7 @@ def parse(bib_file,html_file,**meta):
 	bib=open(bib_file).read()
 
 	papers=[]
-	for x in re.finditer("""@(?P<type>\w+)\{(.+\n)+\},\n""",bib):
+	for x in re.finditer("""@(?P<type>\w+)\{(.+\n)+\},?\n""",bib):
 		paper={"type":x.group("type"),"bib":x.group(0)}
 		paper_bib=x.group(0)
 		#print(paper_bib)
@@ -19,7 +19,7 @@ def parse(bib_file,html_file,**meta):
 			input()
 		papers.append(paper)
 
-	papers.sort(key=lambda x:int(x.get("year","0")),reverse=True)
+	papers.sort(key=lambda x:(x.get("year","0")),reverse=True)
 
 
 	
