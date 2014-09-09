@@ -7,19 +7,21 @@ def parse(bib_file,html_file,**meta):
 	bib=open(bib_file).read()
 
 	papers=[]
-	for x in re.finditer("""@(?P<type>\w+)\{(.+\n)+\},\n""",bib):
+	for x in re.finditer("""@(?P<type>\w+)\{(.+\n)+\},?\n""",bib):
 		paper={"type":x.group("type"),"bib":x.group(0)}
 		paper_bib=x.group(0)
 		#print(paper_bib)
-		for y in re.finditer(r"\t(?P<key>\w+)\ =\ \{(?P<value>[^\t]+)\},?\n",paper_bib):
+		for y in re.finditer(r"\t(?P<key>\w+)\ =\ \{(?P<value>[^\t\n]+)\}(,)?\n",paper_bib):
 			#print('key >>',y.group("key"))
 			#print('    value >>',y.group("value"))
 			paper[y.group("key")]=y.group("value")
+			print(paper_bib)
+			print(y.group('value'))
 		if ('title' not in paper):
 			input()
 		papers.append(paper)
 
-	papers.sort(key=lambda x:int(x.get("year","0")),reverse=True)
+	papers.sort(key=lambda x:(x.get("year","0")),reverse=True)
 
 
 	
@@ -60,7 +62,7 @@ def parse(bib_file,html_file,**meta):
 <body>
 <div class="header"><div class="pic"></div>
 {title}<br/>
-由<a href="{collector_url}">{collector}</a>维护<br/>
+由<a href="{collector_url}">{collector}</a>维护（<a href="http://zhangkaixu.github.com/isan/">中文分词实验环境</a>）<br/>
 如有意见与建议，欢迎联系作者:)<br/>
 页面生成日期： {date}， 由<a href="http://zhangkaixu.github.com/bibpage/">bibpage</a>工具自动生成自bib格式文献列表。
 </div>
