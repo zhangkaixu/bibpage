@@ -11,10 +11,12 @@ def parse(bib_file,html_file,**meta):
 		paper={"type":x.group("type"),"bib":x.group(0)}
 		paper_bib=x.group(0)
 		#print(paper_bib)
-		for y in re.finditer(r"\t(?P<key>\w+)\ =\ \{(?P<value>[^\t]+)\},?\n",paper_bib):
+		for y in re.finditer(r"\t(?P<key>\w+)\ =\ \{(?P<value>[^\t\n]+)\}(,)?\n",paper_bib):
 			#print('key >>',y.group("key"))
 			#print('    value >>',y.group("value"))
 			paper[y.group("key")]=y.group("value")
+			print(paper_bib)
+			print(y.group('value'))
 		if ('title' not in paper):
 			input()
 		papers.append(paper)
